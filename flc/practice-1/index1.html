@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Plugin Examples</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/minty/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style1.css">
+	<link rel="stylesheet" href="/css/style2.css">
+</head>
+
+<body>
+	<div class="container">
+
+		<form class="search circle inset" onsubmit="return false;">
+			<input class="search__input" type="text" placeholder="Поиск…" autocomplete="off">
+			<button class="search__button" type="submit">ОК</button>
+		</form>
+
+		<div class="toggle-wrapper">
+			<div class="toggle pancake-stack">
+				<input id="pancake" type="checkbox" />
+				<label class="toggle-item" for="pancake">
+					<div class="pancakes">
+						<div class="pancake"></div>
+						<div class="pancake"></div>
+						<div class="pancake"></div>
+						<div class="butter"></div>
+					</div>
+				</label>
+			</div>
+		</div>
+		<div>
+			<h1>Исполнители и группы</h1>
+
+			<table class="table sort" id="example" style="margin: auto; width:100%;">
+				<thead class="thead-dark">
+					<tr>
+						<td scope="col">#</td>
+						<td scope="col">Band Name</td>
+						<td scope="col">Country</td>
+						<td scope="col">Main Genre</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Nirvana</td>
+						<td>USA</td>
+						<td>Grunge / Alternative Rock</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Pink Floyd</td>
+						<td>UK</td>
+						<td>Progressive / Psychedelic Rock</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>AC/DC</td>
+						<td>Australia</td>
+						<td>Hard Rock / Heavy Metal</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p class="lead" style="margin-top:20px;">
+				<button id="json" class="btn btn-primary">TO JSON</button>
+				<button id="csv" class="btn btn-info">TO CSV</button>
+				<button id="pdf" class="btn btn-danger">TO PDF</button>
+				<input type="button" class="btn btn-success" value="Export as Excel"
+					onclick="saveAsExcel('example', 'table.xls')" />
+			</p>
+		</div>
+
+		<iframe id="textArea" style="display:none"></iframe>
+	</div>
+
+	<div class="chat-app">
+
+		<aside class="sidebar">
+			<div class="sidebar__head">
+				<span class="sidebar__title">Участники</span>
+				<span class="sidebar__count">6</span>
+			</div>
+			<ul class="members">
+				<li class="member is-active">
+					<span class="avatar">ИМ</span>
+					<span class="member__info">
+						<div class="member__name">Иван Иванов</div>
+						<div class="member__status is-online">в сети</div>
+					</span>
+				</li>
+				<li class="member">
+					<span class="avatar avatar--g1">ПП</span>
+					<span class="member__info">
+						<div class="member__name">Пётр Петров</div>
+						<div class="member__status">был(а) недавно</div>
+					</span>
+				</li>
+				<li class="member">
+					<span class="avatar avatar--g2">АС</span>
+					<span class="member__info">
+						<div class="member__name">Анна Смирнова</div>
+						<div class="member__status is-online">в сети</div>
+					</span>
+				</li>
+				<li class="member">
+					<span class="avatar avatar--g3">МК</span>
+					<span class="member__info">
+						<div class="member__name">Максим Кузнецов</div>
+						<div class="member__status">печатает…</div>
+					</span>
+				</li>
+				<li class="member">
+					<span class="avatar avatar--g4">ЕС</span>
+					<span class="member__info">
+						<div class="member__name">Елена Соколова</div>
+						<div class="member__status">был(а) 5 мин назад</div>
+					</span>
+				</li>
+				<li class="member">
+					<span class="avatar avatar--g5">ДМ</span>
+					<span class="member__info">
+						<div class="member__name">Дмитрий Морозов</div>
+						<div class="member__status">был(а) вчера</div>
+					</span>
+				</li>
+			</ul>
+		</aside>
+
+		<section class="chat">
+			<header class="chat__head">
+				<div class="chat__peer">
+					<span class="avatar avatar--g2">АС</span>
+					<div>
+						<div class="chat__peer-name">Анна Смирнова</div>
+						<div class="chat__peer-status">в сети</div>
+					</div>
+				</div>
+				<div class="chat__actions">
+					<button class="icon-btn" title="Видео">📹</button>
+					<button class="icon-btn" title="Звонок">📞</button>
+					<button class="icon-btn" title="Закрыть">✕</button>
+				</div>
+			</header>
+
+			<div class="messages" id="messages">
+				<div class="day">Сегодня</div>
+
+				<div class="msg msg--other">
+					<span class="avatar avatar--g2">АС</span>
+					<div>
+						<div class="msg__bubble">Привет! Ты уже посмотрел новую версию макета?</div>
+						<div class="msg__time">10:02</div>
+					</div>
+				</div>
+
+				<div class="msg msg--me">
+					<span class="avatar">ИМ</span>
+					<div>
+						<div class="msg__bubble">Да, только что. Выглядит очень аккуратно 👌</div>
+						<div class="msg__time">10:03</div>
+					</div>
+				</div>
+
+				<div class="msg msg--other">
+					<span class="avatar avatar--g2">АС</span>
+					<div>
+						<div class="sticker">🎉</div>
+						<div class="msg__time">10:04</div>
+					</div>
+				</div>
+
+				<div class="msg msg--me">
+					<span class="avatar">ИМ</span>
+					<div>
+						<div class="msg__bubble">Давай оставим такой вариант и добавим тёмную тему.</div>
+						<div class="msg__time">10:05</div>
+					</div>
+				</div>
+
+				<div class="msg msg--other">
+					<span class="avatar avatar--g2">АС</span>
+					<div>
+						<div class="msg__bubble">Отличная идея! Я за.</div>
+						<div class="msg__time">10:06</div>
+					</div>
+				</div>
+			</div>
+
+			<form class="composer" id="composer" onsubmit="return false;">
+				<input class="composer__input" id="composer-input" type="text" placeholder="Написать сообщение…"
+					autocomplete="off">
+				<button class="send" type="submit" id="composer-send" title="Отправить">➤</button>
+			</form>
+		</section>
+	</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.5/jspdf.plugin.autotable.min.js"></script>
+
+	<script src="src/tableHTMLExport.js"></script>
+	<script src="js/script.js"></script>
+
+	<script src="js/saveAsExcel.js"></script>
+	<script src="js/tablesort.js"></script>
+
+	<script>
+		$(function () {
+			$('#json').on('click', function () {
+				$("#example").tableHTMLExport({ type: 'json', filename: 'example.json' });
+			});
+			$('#csv').on('click', function () {
+				$("#example").tableHTMLExport({ type: 'csv', filename: 'example.csv' });
+			});
+			$('#pdf').on('click', function () {
+				if (typeof jsPDF === 'undefined') {
+					alert('jsPDF не загружен. Проверьте подключение скрипта jspdf.min.js');
+					return;
+				}
+				if (typeof jsPDF.API.autoTable === 'undefined') {
+					alert('jspdf-autotable не загружен. Проверьте подключение плагина autotable');
+					return;
+				}
+				$("#example").tableHTMLExport({ type: 'pdf', filename: 'example.pdf', orientation: 'p' });
+			});
+		});
+	</script>
+</body>
+
+</html>
+
+<!-- $('#example').tableHTMLExport({ type: 'json', consoleLog: true, filename: 'example.json' }); -->
